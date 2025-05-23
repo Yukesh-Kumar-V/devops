@@ -8,11 +8,66 @@ html_template = """
 <head>
     <title>Web Calculator</title>
     <style>
-        body {{ font-family: Arial; display: flex; justify-content: center; margin-top: 50px; }}
-        .calculator {{ width: 320px; }}
-        input[type="text"] {{ width: 100%; height: 60px; font-size: 24px; text-align: right; padding: 10px; }}
-        .buttons {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }}
-        button {{ height: 60px; font-size: 20px; }}
+        body {{
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #8EC5FC, #E0C3FC);
+        }}
+        .calculator {{
+            width: 320px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }}
+        input[type="text"] {{
+            width: 100%;
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #e9ecef;
+        }}
+        .buttons {{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }}
+        button {{
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }}
+        button:hover {{
+            transform: scale(1.05);
+        }}
+        button[value="C"] {{ background-color: #ff6b6b; color: white; }}
+        button[value="="] {{ background-color: #1dd1a1; color: white; }}
+        button[value="+"] {{
+            background-color: #48dbfb; color: white;
+        }}
+        button[value="-"] {{
+            background-color: #48dbfb; color: white;
+        }}
+        button[value="*"] {{
+            background-color: #48dbfb; color: white;
+        }}
+        button[value="/"] {{
+            background-color: #48dbfb; color: white;
+        }}
+        button:not([value="C"]):not([value="="]):not([value="+"]):not([value="-"]):not([value="*"]):not([value="/"]) {{
+            background-color: #feca57;
+            color: #212529;
+        }}
     </style>
 </head>
 <body>
